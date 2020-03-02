@@ -1,19 +1,11 @@
-package com.example.gradecalculator;
+package com.example.mygradecalculator;
 
 import android.os.Bundle;
 
-import com.example.gradecalculator.ui.calculator.CalculatorFragment;
-import com.example.gradecalculator.ui.home.HomeFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.mygradecalculator.ui.calculator.CalculatorFragment;
+import com.example.mygradecalculator.ui.home.HomeFragment;
 
-import android.view.MenuItem;
-import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;

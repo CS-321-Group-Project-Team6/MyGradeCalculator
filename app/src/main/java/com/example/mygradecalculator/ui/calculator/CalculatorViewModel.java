@@ -1,4 +1,4 @@
-package com.example.gradecalculator.ui.calculator;
+package com.example.mygradecalculator.ui.calculator;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
