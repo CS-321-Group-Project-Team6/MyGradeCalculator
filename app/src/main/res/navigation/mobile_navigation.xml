@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.gradecalculator.ui.home.HomeFragment"
+        android:name="com.example.mygradecalculator.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_calculator"
-        android:name="com.example.gradecalculator.ui.calculator.CalculatorFragment"
+        android:name="com.example.mygradecalculator.ui.calculator.CalculatorFragment"
         android:label="@string/menu_calculator"
         tools:layout="@layout/fragment_calculator" />
 
