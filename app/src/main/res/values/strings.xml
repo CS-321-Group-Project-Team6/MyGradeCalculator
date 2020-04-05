@@ -9,6 +9,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_calculator">Grade Calculator</string>
+    <string name="menu_classes">Your Classes</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 </resources>

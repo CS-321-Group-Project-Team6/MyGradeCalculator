@@ -2,8 +2,8 @@ package com.example.mygradecalculator;
 
 import android.os.Bundle;
 
-import com.example.mygradecalculator.ui.calculator.CalculatorFragment;
-import com.example.mygradecalculator.ui.home.HomeFragment;
+//import com.example.mygradecalculator.ui.calculator.CalculatorFragment;
+//import com.example.mygradecalculator.ui.home.HomeFragment;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -19,8 +19,8 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity{
 
-    private Fragment homeFragment = new HomeFragment();
-    private Fragment calculatorFragment = new CalculatorFragment();
+    //private Fragment homeFragment = new HomeFragment();
+    //private Fragment calculatorFragment = new CalculatorFragment();
 
     private AppBarConfiguration mAppBarConfiguration;
     @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity{
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_calculator)
+                R.id.nav_home, R.id.nav_calculator, R.id.nav_classes)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

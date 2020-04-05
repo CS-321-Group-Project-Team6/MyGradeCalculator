@@ -1,4 +1,4 @@
-package com.example.mygradecalculator.ui.home;
+package com.example.mygradecalculator.ui.classes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,20 +9,21 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.mygradecalculator.R;
 
-public class HomeFragment extends Fragment {
+public class ClassesFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ClassesViewModel classesViewModel;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+                             ViewGroup container, Bundle savedInstanceState) {
+        classesViewModel =
+                new ViewModelProvider(this).get(ClassesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_classes, container, false);
+        final TextView textView = root.findViewById(R.id.text_classes);
+        classesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
