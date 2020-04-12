@@ -16,4 +16,11 @@ public class ClassesViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
+    public void setTextTo(String s) {
+
+        mText.setValue(s);
+    }
+
+
 }
