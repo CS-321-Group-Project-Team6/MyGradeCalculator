@@ -12,5 +12,6 @@
     <string name="menu_classes">Your Classes</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="classes_textfield_hint">hint</string>
+    <string name="edit_text_class_name_hint">Class Name:</string>
+    <string name="edit_text_gpa_hint">GPA:</string>
 </resources>

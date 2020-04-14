@@ -1,17 +1,17 @@
 package com.example.mygradecalculator.adapters;
 
 import android.content.Context;
-import android.view.LayoutInflater;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mygradecalculator.R;
 import com.example.mygradecalculator.ui.classes.ClassModel;
 import com.google.android.material.textfield.TextInputEditText;
-
 import java.util.List;
+import java.util.ArrayList;
 
 
 public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHolder> {
@@ -26,8 +26,8 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
         public ViewHolder(View itemView) {
             super(itemView);
 
-            cName = (TextInputEditText) itemView.findViewById(R.id.class_name_edit_text);
-            cGPA = (TextInputEditText) itemView.findViewById(R.id.class_gpa_edit_text);
+            cName = itemView.findViewById(R.id.class_name_edit_text);
+            cGPA = itemView.findViewById(R.id.class_gpa_edit_text);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -35,8 +35,7 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
 
                     ClassModel cpu = (ClassModel) view.getTag();
 
-                    //Toast.makeText(view.getContext(), cpu.getPersonName()+" is "+ cpu.getJobProfile(), Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(view.getContext(), cpu.getClassName()+" is "+ cpu.getGPA(), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -48,9 +47,10 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
         mContext = context;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = View.inflate(parent.getContext(), R.layout.item_view_layout, null);
+        View v = View.inflate(mContext, R.layout.item_view_layout, null);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }

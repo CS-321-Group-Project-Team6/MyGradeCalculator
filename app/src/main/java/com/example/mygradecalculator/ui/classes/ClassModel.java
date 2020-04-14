@@ -5,8 +5,9 @@ package com.example.mygradecalculator.ui.classes;
  * an academic class, not to be confused with
  * the {@link com.example.mygradecalculator.ui.classes.ClassesViewModel ClassesViewModel}
  * class, which has an entirely unrelated purpose.
+ * @author Edwin
  */
-public class ClassModel {
+public class ClassModel {//TODO: Add additional stats to track (ex: grades instead of GPA numbers)
     private String className;
     private double gpa;
 
