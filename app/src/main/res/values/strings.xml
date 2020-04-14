@@ -12,4 +12,5 @@
     <string name="menu_classes">Your Classes</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="classes_textfield_hint">hint</string>
 </resources>

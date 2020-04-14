@@ -1,26 +1,18 @@
 package com.example.mygradecalculator;
 
 import android.os.Bundle;
+import android.view.Menu;
+import com.google.android.material.navigation.NavigationView;
 
-//import com.example.mygradecalculator.ui.calculator.CalculatorFragment;
-//import com.example.mygradecalculator.ui.home.HomeFragment;
-
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity{
-
-    //private Fragment homeFragment = new HomeFragment();
-    //private Fragment calculatorFragment = new CalculatorFragment();
 
     private AppBarConfiguration mAppBarConfiguration;
     @Override
@@ -29,14 +21,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
+        //Initializes a floating action button to use in the classes fragment
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
