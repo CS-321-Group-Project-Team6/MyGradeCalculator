@@ -14,7 +14,7 @@
             android:title="@string/menu_calculator" />
         <item
             android:id="@+id/nav_classes"
-            android:icon="@drawable/ic_menu_add_circle_white_24dp"
+            android:icon="@drawable/ic_menu_share"
             android:title="@string/menu_classes" />
 
     </group>

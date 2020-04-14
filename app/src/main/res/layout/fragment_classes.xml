@@ -41,11 +41,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-            <!--
+            android:layout_height="match_parent">
+        <!--
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editText_sample"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -181,7 +180,7 @@
                 android:ems="10"
                 android:hint="@string/classes_textfield_hint"
                 android:inputType="number" />
-            -->
+        -->
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
