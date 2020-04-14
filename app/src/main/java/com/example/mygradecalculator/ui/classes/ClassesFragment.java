@@ -1,36 +1,36 @@
 package com.example.mygradecalculator.ui.classes;
 
-import android.icu.text.MessagePattern;
 import android.os.Bundle;
-import android.text.InputType;
-import android.text.Layout;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
-import androidx.core.widget.TextViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mygradecalculator.adapters.MyClassAdapter;
-
+import com.example.mygradecalculator.ui.classes.ClassModel;
 
 import com.example.mygradecalculator.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.zip.Inflater;
+import java.util.ArrayList;
 
 public class ClassesFragment extends Fragment {
 
     private ClassesViewModel classesViewModel;
     private LayoutInflater classesInflater;
+
+    private ArrayList<ClassModel> classList;
+    private FloatingActionButton classes_fab;
+    private RecyclerView classesRecyclerView;
+    private MyClassAdapter classesAdapter;
+    private RecyclerView.LayoutManager classesLayoutManager;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         classesViewModel =
@@ -44,22 +44,38 @@ public class ClassesFragment extends Fragment {
                         textView.setText(s);
             }
         });
-
+        classList = new ArrayList<>();
         return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final FloatingActionButton classes_fab = view.findViewById(R.id.classes_fab);
-        final RecyclerView classesRecycleView = view.findViewById(R.id.recycle_view_layout);
-        EditText[] ea = {new EditText(view.getContext()), new EditText(view.getContext()), new EditText(view.getContext()), (EditText) classesInflater.inflate(R.layout.edit_text_layout, null, false)};
-        final MyClassAdapter classesAdapter = new MyClassAdapter(ea);
-        final RecyclerView.LayoutManager classesLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
-        classesRecycleView.setLayoutManager(classesLayoutManager);
-        classesRecycleView.setAdapter(classesAdapter);
-        classesAdapter.addItem(classesRecycleView, 1);
+        /*final FloatingActionButton */classes_fab = view.findViewById(R.id.classes_fab);
+        classes_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createNewClassItem();
+            }
+        });
+        /*final RecyclerView */classesRecyclerView = view.findViewById(R.id.list);
+        /*final MyClassAdapter */classesAdapter = new MyClassAdapter(view.getContext(), classList);
+        /*final RecyclerView.LayoutManager */classesLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
+        classesRecyclerView.setLayoutManager(classesLayoutManager);
+        classesRecyclerView.setAdapter(classesAdapter);
+        //classesAdapter.addItem(classesRecyclerView, 1);
         classesAdapter.notifyDataSetChanged();
 
+    }
+
+    public void createNewClassItem() {
+        classList.add(new ClassModel("Class_Name", 0.0));
+        classesAdapter.notifyDataSetChanged();
+    }
+
+    public void createMultipleClassItems(int numberOfItems) {
+        for(int i = numberOfItems; i > 0; i--) {
+            createNewClassItem();
+        }
     }
 }

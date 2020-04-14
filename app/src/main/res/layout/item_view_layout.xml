@@ -12,14 +12,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/class_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/class_name_edit_text"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
             android:autofillHints="true"
-            android:hint="hint1" />
+            android:hint="hint1"
+            android:inputType="text"
+            android:maxLines="@android:integer/config_shortAnimTime" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -32,7 +33,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/class_gpa_edit_text"
             android:inputType="numberDecimal"
-            android:maxLength="1"
+            android:maxLength="4"
+            android:maxLines="1"
             android:autofillHints="true"
             android:hint="hint2" />
     </com.google.android.material.textfield.TextInputLayout>
