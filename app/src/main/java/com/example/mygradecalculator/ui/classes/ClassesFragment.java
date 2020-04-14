@@ -2,6 +2,7 @@ package com.example.mygradecalculator.ui.classes;
 
 import android.icu.text.MessagePattern;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.Layout;
 import android.view.View;
 import android.view.LayoutInflater;
@@ -51,15 +52,14 @@ public class ClassesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final FloatingActionButton classes_fab = view.findViewById(R.id.classes_fab);
-        final RecyclerView classesRecycleView = view.findViewById(R.id.list);
-        String[] s = {"1", "2", "3"};
-        final MyClassAdapter classesAdapter = new MyClassAdapter(s);
+        final RecyclerView classesRecycleView = view.findViewById(R.id.recycle_view_layout);
+        EditText[] ea = {new EditText(view.getContext()), new EditText(view.getContext()), new EditText(view.getContext()), (EditText) classesInflater.inflate(R.layout.edit_text_layout, null, false)};
+        final MyClassAdapter classesAdapter = new MyClassAdapter(ea);
         final RecyclerView.LayoutManager classesLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         classesRecycleView.setLayoutManager(classesLayoutManager);
         classesRecycleView.setAdapter(classesAdapter);
-        EditText e = (EditText) classesInflater.inflate(R.layout.edit_text_layout, classesRecycleView, false);
-        //classesRecycleView.addView(e);
-        classesAdapter.bindViewHolder(classesAdapter.onCreateViewHolder(classesRecycleView, 0), 0);
+        classesAdapter.addItem(classesRecycleView, 1);
         classesAdapter.notifyDataSetChanged();
+
     }
 }

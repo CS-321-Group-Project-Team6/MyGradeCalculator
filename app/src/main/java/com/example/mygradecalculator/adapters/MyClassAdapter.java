@@ -1,90 +1,68 @@
 package com.example.mygradecalculator.adapters;
-
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Application;
-import android.text.InputType;
-import android.text.Layout;
-import android.view.LayoutInflater;
-
-import androidx.appcompat.app.AppCompatViewInflater;
-import androidx.core.view.ViewGroupCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.content.Context;
-import android.view.ContextThemeWrapper;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import androidx.annotation.NonNull;
-
-import com.example.mygradecalculator.MainActivity;
-import com.example.mygradecalculator.R;
-import com.example.mygradecalculator.ui.classes.ClassesFragment;
-
 import android.view.LayoutInflater;
-
-import java.util.Arrays;
-import android.os.Bundle;
-import android.view.View;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
-import androidx.core.widget.TextViewCompat;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.mygradecalculator.adapters.MyClassAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 
-import org.w3c.dom.Text;
+//import com.example.mygradecalculator.R;
+import com.example.mygradecalculator.R;
+import com.example.mygradecalculator.ui.classes.ClassModel;
+import com.google.android.material.textfield.TextInputEditText;
 
-public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.MyViewHolder> {
+import java.util.List;
 
-    private String[] adapterDataset;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        public EditText editText;
-        public MyViewHolder(EditText e) {
-            super(e);
-            editText = e;
-            editText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHolder> {
+    private Context mContext;
+    private List<ClassModel> madapterDataset;
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        public TextInputEditText cName;
+        public TextInputEditText cGPA;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            cName = (TextInputEditText) itemView.findViewById(R.id.class_name_edit_text);
+            cGPA = (TextInputEditText) itemView.findViewById(R.id.class_gpa_edit_text);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    ClassModel cpu = (ClassModel) view.getTag();
+
+                    //Toast.makeText(view.getContext(), cpu.getPersonName()+" is "+ cpu.getJobProfile(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
         }
     }
 
-    public MyClassAdapter(String[] dataset) {
-        adapterDataset = dataset;
+    public MyClassAdapter(Context context, List classModels) {
+        madapterDataset = classModels;
+        mContext = context;
     }
 
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //newEditText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        EditText e =  new EditText(parent.getContext());
-        MyViewHolder newMyViewHolder = new MyViewHolder(e);
-        return newMyViewHolder;
-    }
-
-    /*public void bindViewHolder (ViewHolder , int i) {
-
+    /*@Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.class_item_view_layout, )
+        ViewHolder viewHolder = new ViewHolder(v);
+        return viewHolder;
     }*/
 
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.editText.setText(adapterDataset[position]);
-        holder.editText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
-    }
+    /*@Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.itemView.setTag(personUtils.get(position));
 
-    @Override
-    public int getItemCount() {
-        return adapterDataset.length;
-    }
+        PersonUtils pu = personUtils.get(position);
+
+        holder.pName.setText(pu.getPersonName());
+        holder.pJobProfile.setText(pu.getJobProfile());
+
+    }*/
 }

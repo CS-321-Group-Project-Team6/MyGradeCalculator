@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,153 +33,13 @@
             android:layout_marginBottom="8dp"
             android:textAlignment="center"
             android:textSize="20sp"
-
             app:layout_constraintTop_toTopOf="parent"
             android:gravity="center_horizontal" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <!--
-            <EditText
-                android:id="@+id/editText_sample"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editText16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:ems="10"
-                android:hint="@string/classes_textfield_hint"
-                android:inputType="number" />
-        -->
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
