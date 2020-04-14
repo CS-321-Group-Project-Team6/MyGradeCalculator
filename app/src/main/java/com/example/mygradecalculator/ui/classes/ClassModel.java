@@ -1,5 +1,11 @@
 package com.example.mygradecalculator.ui.classes;
 
+/**
+ * This is a simple {java.Class} meant to represent information about
+ * an academic class, not to be confused with
+ * the {@link com.example.mygradecalculator.ui.classes.ClassesViewModel ClassesViewModel}
+ * class, which has an entirely unrelated purpose.
+ */
 public class ClassModel {
     private String className;
     private double gpa;

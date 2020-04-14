@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<!--This is the layout that describes what each GPA
+    Class should look like in the menu-->
+<GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_margin="24dp">
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/class_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
             android:autofillHints="true"
-            android:hint="hint1"
+            android:bufferType="normal"
+            android:hint="@string/classes_textfield_hint"
             android:inputType="text"
-            android:maxLines="@android:integer/config_shortAnimTime" />
+            android:saveEnabled="true"
+            android:singleLine="true" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/class_gpa_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/class_gpa_edit_text"
+            android:autofillHints="true"
+            android:bufferType="normal"
+            android:hint="@string/classes_textfield_hint"
             android:inputType="numberDecimal"
             android:maxLength="4"
-            android:maxLines="1"
-            android:autofillHints="true"
-            android:hint="hint2" />
+            android:saveEnabled="true"
+            android:singleLine="true" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
-</LinearLayout>
+
+</GridLayout>

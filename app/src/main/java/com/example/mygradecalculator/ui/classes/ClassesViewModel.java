@@ -10,7 +10,7 @@ public class ClassesViewModel extends ViewModel {
 
     public ClassesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is the classes fragment");
+        mText.setValue("Touch the Floating Action Button to Add Classes");
     }
 
     public LiveData<String> getText() {
