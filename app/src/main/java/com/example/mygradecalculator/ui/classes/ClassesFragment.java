@@ -1,6 +1,7 @@
 package com.example.mygradecalculator.ui.classes;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.mygradecalculator.adapters.MyClassAdapter;
 
 import com.example.mygradecalculator.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -30,7 +32,8 @@ public class ClassesFragment extends Fragment {
     private MyClassAdapter classesAdapter;
     private RecyclerView.LayoutManager classesLayoutManager;
     private TextView textView;
-
+    private ViewGroup classesContainer;
+    private View root;
     //TODO: Reimplement saving user information using Android Bundles
     //TODO: Fix TextInput layout to look neater
     //TODO: Look in to using a list view that's less resource intensive
@@ -40,9 +43,9 @@ public class ClassesFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         classesViewModel =
                 new ViewModelProvider(this).get(ClassesViewModel.class);
-
+        classesContainer = container;
         classesInflater = inflater;
-        View root = inflater.inflate(R.layout.fragment_classes, container, false);
+        root = inflater.inflate(R.layout.fragment_classes, container, false);
         textView = root.findViewById(R.id.text_classes);
         classesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
                     @Override
@@ -70,7 +73,7 @@ public class ClassesFragment extends Fragment {
         classesLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         classesRecyclerView.setLayoutManager(classesLayoutManager);
         classesRecyclerView.setAdapter(classesAdapter);
-        //createMultipleClassItems(10);
+        //createMultipleClassItems(25);
 
     }
 
@@ -81,14 +84,14 @@ public class ClassesFragment extends Fragment {
         if(textView.getVisibility() == TextView.VISIBLE)
             textView.setVisibility(TextView.GONE);
 
-        if(classList.size() < 24) {//I arbitrarily chose 24 classes as the max
-            // since these are supposed to be ongoing academic classes
-            classList.add(new ClassModel("", 0));
+        if(classList.size() < 12) {//I arbitrarily chose 12 classes as the max
+                                   //since these are supposed to be ongoing academic classes
+            classList.add(new ClassModel("", 0.0));
             classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
-        }                                       //are made. Otherwise changes wont show up.
+        }                                          //are made. Otherwise changes wont show up in the emulator view window
         else{
-            textView.setVisibility(View.VISIBLE);
-            textView.setText("No more classes may be added! The max is 24!");
+            //textView.setVisibility(TextView.VISIBLE);
+            Snackbar.make(root, "No more classes may be added! The max is 12!", 3000).show();
         }
     }
     //Creates a specified number of items to the list. This is mainly for testing purposes
