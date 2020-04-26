@@ -58,11 +58,14 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(madapterDataset.get(position));
-
         ClassModel cm = madapterDataset.get(position);
-
-        holder.cName.setText(cm.getClassName());
-        holder.cGPA.setText(cm.getGPA().toString());
+        cm.setGpa(madapterDataset.get(position).getGPA());
+        cm.setClassName(madapterDataset.get(position).getClassName());
+        //holder.itemView.setId(madapterDataset.size() + 1);
+        holder.cName.setText(madapterDataset.get(position).getClassName());
+        holder.cGPA.setText(madapterDataset.get(position).getGPA().toString());
+        holder.itemView.setId(position);
+        //holder.cGPA.setText(cm.getGPA().toString());
 
     }
 

@@ -14,4 +14,6 @@
     <string name="menu_send">Send</string>
     <string name="edit_text_class_name_hint">Class Name:</string>
     <string name="edit_text_gpa_hint">GPA:</string>
+    <string name="button_calculate">Calculate</string>
+    <string name="button_Clear">Clear</string>
 </resources>
