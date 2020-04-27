@@ -6,21 +6,15 @@
     app:startDestination="@+id/nav_classes">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.mygradecalculator.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_classes"
+        android:name="com.example.mygradecalculator.ui.classes.ClassesFragment"
+        android:label="@string/menu_classes"
+        tools:layout="@layout/fragment_classes" />
 
     <fragment
         android:id="@+id/nav_calculator"
         android:name="com.example.mygradecalculator.ui.calculator.CalculatorFragment"
         android:label="@string/menu_calculator"
         tools:layout="@layout/fragment_calculator" />
-
-    <fragment
-        android:id="@+id/nav_classes"
-        android:name="com.example.mygradecalculator.ui.classes.ClassesFragment"
-        android:label="@string/menu_classes"
-        tools:layout="@layout/fragment_classes" />
 
 </navigation>
