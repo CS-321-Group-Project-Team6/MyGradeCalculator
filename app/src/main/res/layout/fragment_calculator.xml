@@ -1,374 +1,355 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Descr1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:visibility="visible">
+    android:layout_height="match_parent">
 
-    <Space
-        android:id="@+id/space"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="800dp"
-        android:layout_marginEnd="363dp"
-        android:layout_marginRight="363dp"
-        android:layout_marginBottom="379dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CalculatorUI"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:clickable="true"
-        android:editable="false"
         android:focusable="true"
-        android:text="@string/button_calculate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:focusableInTouchMode="true"
+        android:scrollbars="vertical"
+        android:visibility="visible">
 
-    <Button
-        android:id="@+id/button_clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="800dp"
-        android:layout_marginEnd="113dp"
-        android:layout_marginRight="113dp"
-        android:layout_marginBottom="379dp"
-        android:text="Clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc1"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="361dp"
-        android:layout_marginRight="361dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/weight1"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="56dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="weight_ex_15"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight1"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toStartOf="@+id/Grade1"
-        app:layout_constraintStart_toEndOf="@+id/Desc1"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
+        <EditText
+            android:id="@+id/grade1"
+            android:layout_width="98dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="116dp"
+            android:ems="10"
+            android:hint="Grade"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade1"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="305dp"
-        android:layout_marginLeft="305dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        android:layout_marginBottom="713dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/addGrade1"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc2"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Desc1" />
+        <Button
+            android:id="@+id/clearGrade1"
+            android:layout_width="71dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="@string/button_Clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight2"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight1" />
+        <TextView
+            android:id="@+id/gradeTxt1"
+            android:layout_width="194dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="169dp"
+            android:background="#170E0E0E"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade2"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Grade1" />
+        <EditText
+            android:id="@+id/weight2"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="275dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="weight_ex_15"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/Header"
-        android:layout_width="407dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:text=" Enter a description of the category. Ex: Homework \n Enter  the weight of the grade Ex: 20%  = .20 \n Enter grade recieved. Press calulate for result. \n "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/grade2"
+            android:layout_width="98dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="335dp"
+            android:ems="10"
+            android:hint="Grade"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc3"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Desc2" />
+        <Button
+            android:id="@+id/addGrade2"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="327dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight3"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight2" />
+        <Button
+            android:id="@+id/clearGrade2"
+            android:layout_width="71dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="327dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="@string/button_Clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade3"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Grade2" />
+        <TextView
+            android:id="@+id/gradeTxt2"
+            android:layout_width="194dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="388dp"
+            android:background="#170E0E0E"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc4"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Desc3" />
+        <EditText
+            android:id="@+id/weight3"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="494dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="weight_ex_15"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight4"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight3" />
+        <EditText
+            android:id="@+id/grade3"
+            android:layout_width="98dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="554dp"
+            android:ems="10"
+            android:hint="Grade"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade4"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Grade3" />
+        <Button
+            android:id="@+id/addGrade3"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="546dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc5"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Desc4" />
+        <Button
+            android:id="@+id/clearGrade3"
+            android:layout_width="71dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="546dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="@string/button_Clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight5"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight4" />
+        <TextView
+            android:id="@+id/gradeTxt3"
+            android:layout_width="194dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="607dp"
+            android:background="#170E0E0E"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade5"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Grade4" />
+        <EditText
+            android:id="@+id/weight4"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="713dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="weight_ex_15"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Desc6"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Desc5" />
+        <EditText
+            android:id="@+id/grade4"
+            android:layout_width="98dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="773dp"
+            android:ems="10"
+            android:hint="Grade"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Weight6"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Weight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight5" />
+        <Button
+            android:id="@+id/addGrade4"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="765dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Grade6"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:clickable="true"
-        android:editable="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Grade "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Grade5" />
+        <Button
+            android:id="@+id/clearGrade4"
+            android:layout_width="71dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="765dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="@string/button_Clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/Result"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="147dp"
-        android:layout_marginLeft="147dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:clickable="false"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight6" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/gradeTxt4"
+            android:layout_width="194dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="826dp"
+            android:background="#170E0E0E"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/weight5"
+            android:layout_width="99dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="932dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="weight_ex_15"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/grade5"
+            android:layout_width="98dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="992dp"
+            android:ems="10"
+            android:hint="Grade"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/addGrade5"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="984dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/clearGrade5"
+            android:layout_width="71dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="984dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:text="@string/button_Clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gradeTxt5"
+            android:layout_width="194dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="1045dp"
+            android:background="#170E0E0E"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/calculateGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="104dp"
+            android:layout_marginLeft="104dp"
+            android:layout_marginTop="1150dp"
+            android:text="Calculate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/overallGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="216dp"
+            android:layout_marginLeft="216dp"
+            android:layout_marginTop="1160dp"
+            android:text="Grade:  "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -16,4 +16,8 @@
     <string name="edit_text_gpa_hint">GPA:</string>
     <string name="button_calculate">Calculate</string>
     <string name="button_Clear">Clear</string>
+    <string name="clear">Clear</string>
+    <string name="Homework">Homework</string>
+    <string name="weight_ex_15">Weight (ex.15)</string>
+    <string name="name">Name</string>
 </resources>
