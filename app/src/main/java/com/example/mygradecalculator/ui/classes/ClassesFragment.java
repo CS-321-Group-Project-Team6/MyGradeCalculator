@@ -84,14 +84,14 @@ public class ClassesFragment extends Fragment {
         if(textView.getVisibility() == TextView.VISIBLE)
             textView.setVisibility(TextView.GONE);
 
-        if(classList.size() < 12) {//I arbitrarily chose 12 classes as the max
+        if(classList.size() < 18) {//I arbitrarily chose 18 classes as the max
                                    //since these are supposed to be ongoing academic classes
             classList.add(new ClassModel("", 0.0));
             classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
         else{
             //textView.setVisibility(TextView.VISIBLE);
-            Snackbar.make(root, "No more classes may be added! The max is 12!", 3000).show();
+            Snackbar.make(root, "No more classes may be added! The max is 18!", 3000).show();
         }
     }
     //Creates a specified number of items to the list. This is mainly for testing purposes
