@@ -59,7 +59,7 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setTag(madapterDataset.get(position));
         ClassModel cm = madapterDataset.get(position);
-        cm.setGpa(madapterDataset.get(position).getGPA());
+        cm.setGPA(madapterDataset.get(position).getGPA());
         cm.setClassName(madapterDataset.get(position).getClassName());
         //holder.itemView.setId(madapterDataset.size() + 1);
         holder.cName.setText(madapterDataset.get(position).getClassName());
