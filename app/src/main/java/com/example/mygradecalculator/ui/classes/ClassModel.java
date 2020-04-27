@@ -17,6 +17,11 @@ public class ClassModel {//TODO: Add additional stats to track (ex: grades inste
     private Double av;
     private ArrayList<Boolean> added;
 
+    public ClassModel(String className, double gpa) {
+        this.className = className;
+        this.gpa = gpa;
+    }
+
     public ClassModel(String className, double gpa, ArrayList<Double> weigh,ArrayList<Double> avg, ArrayList<Boolean> addeds) {
         this.className = className;
         this.gpa = gpa;
