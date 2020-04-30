@@ -122,7 +122,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
                 parent.setVisibility(ScrollView.GONE);
                 classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
                 classes_fab.setVisibility(FloatingActionButton.GONE);
-                classList.add(new ClassModel("", 0.0));
+                classList.add(new ClassModel("CS 321", 3.2));
                 classesAdapter.notifyDataSetChanged();
                 break;
         }
