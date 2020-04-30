@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mygradecalculator.R;
@@ -20,14 +21,14 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextInputEditText cName;
-        public TextInputEditText cGPA;
+        public TextView cName;
+        public TextView cGPA;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            cName = itemView.findViewById(R.id.class_name_edit_text);
-            cGPA = itemView.findViewById(R.id.class_gpa_edit_text);
+            cName = itemView.findViewById(R.id.className);
+            cGPA = itemView.findViewById(R.id.classGrade);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -50,7 +51,7 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = View.inflate(mContext, R.layout.item_view_layout, null);
+        View v = View.inflate(mContext, R.layout.item_view_layout2, null);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
