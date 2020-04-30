@@ -67,7 +67,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
     private ArrayList<Integer> grades5 = new ArrayList<Integer>();
 
     private EditText className;
-    private int classGrade;
+    private double classGrade;
 
     private ScrollView parent;
     private Button addClass;
@@ -216,6 +216,8 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
 
     public void initAddClass() {
         className = root.findViewById(R.id.addClassName);
+        className.setOnFocusChangeListener((View.OnFocusChangeListener) this);
+
         gradeTxt1 = root.findViewById(R.id.addClassGradesTxt1);
         gradeTxt1.setMovementMethod(new ScrollingMovementMethod());
         grade1 = root.findViewById(R.id.addClassGrade1);
