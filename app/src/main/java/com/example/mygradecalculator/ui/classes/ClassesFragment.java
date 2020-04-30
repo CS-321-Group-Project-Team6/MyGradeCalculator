@@ -121,7 +121,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
             classesInflater.inflate(R.layout.add_class_menu, (ViewGroup) root);
             classes_fab.setVisibility(FloatingActionButton.GONE);
             initAddClass();
-            //classList.add(new ClassModel("", 0.0));
+            //classList.add(new ClassModel(className.getText().toString(), classGrade));
             //classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
         else{
@@ -208,7 +208,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
                 parent.setVisibility(ScrollView.GONE);
                 classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
                 classes_fab.setVisibility(FloatingActionButton.GONE);
-                classList.add(new ClassModel("", 0.0));
+                classList.add(new ClassModel(className.getText().toString(), classGrade));
                 classesAdapter.notifyDataSetChanged();
                 break;
         }
