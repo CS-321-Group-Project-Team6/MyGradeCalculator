@@ -63,7 +63,8 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.ViewHold
         cm.setGPA(madapterDataset.get(position).getGPA());
         cm.setClassName(madapterDataset.get(position).getClassName());
         holder.cName.setText(madapterDataset.get(position).getClassName());
-        holder.cGPA.setText(madapterDataset.get(position).getGPA().toString());
+        int num =(int) Math.round(madapterDataset.get(position).getGPA());
+        holder.cGPA.setText(""+num+"%");
         holder.itemView.setId(position);
 
     }

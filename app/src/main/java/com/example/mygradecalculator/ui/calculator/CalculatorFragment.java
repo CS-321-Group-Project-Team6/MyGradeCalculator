@@ -189,7 +189,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         grades1 holds values for weight1, and so on.
         grades1-5 are ArrayLists
          */
-        int grade = 0;
+        double grade = 0;
         double average = 0;
 
         if (weight1.getText().length() != 0) {
@@ -231,8 +231,8 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
             average /= 100;
             grade += (Integer.parseInt(String.valueOf(weight5.getText())) * average);
         }
-
-        return grade;
+        int intGrade = (int) Math.round(grade);
+        return intGrade;
     }
 
     private void hideKeyboard() {
