@@ -114,15 +114,25 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        EditText classNameBox;
+        EditText classGpaBox;
+        String nameValue;
+        String gpaValue;
         switch(v.getId()) {
             case R.id.classes_fab:
                 createNewClassItem();
                 break;
             case R.id.addClass:
+                classNameBox = root.findViewById(R.id.class_name);
+                //classGpaBox = classesRecyclerView.findViewById(R.id.class_gpa_edit_text);
+                nameValue = classNameBox.getText().toString();
+                //gpaValue = classGpaBox.getText().toString();
+                System.out.println(nameValue);
+                //System.out.println(gpaValue);
                 parent.setVisibility(ScrollView.GONE);
                 classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
                 classes_fab.setVisibility(FloatingActionButton.GONE);
-                classList.add(new ClassModel("CS 321", 3.2));
+                classList.add(new ClassModel(nameValue, 3.2));
                 classesAdapter.notifyDataSetChanged();
                 break;
         }
