@@ -3,6 +3,7 @@ package com.example.mygradecalculator.ui.calculator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +20,27 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
 
     private TextView gradeTxt1;
     private EditText grade1;
+    private EditText weight1;
     private ArrayList<Integer> grades1 = new ArrayList<Integer>();
 
     private TextView gradeTxt2;
     private EditText grade2;
+    private EditText weight2;
     private ArrayList<Integer> grades2 = new ArrayList<Integer>();
 
     private TextView gradeTxt3;
     private EditText grade3;
+    private EditText weight3;
     private ArrayList<Integer> grades3 = new ArrayList<Integer>();
 
     private TextView gradeTxt4;
     private EditText grade4;
+    private EditText weight4;
     private ArrayList<Integer> grades4 = new ArrayList<Integer>();
 
     private TextView gradeTxt5;
     private EditText grade5;
+    private EditText weight5;
     private ArrayList<Integer> grades5 = new ArrayList<Integer>();
 
     private TextView overallGrade;
@@ -48,7 +54,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         gradeTxt1.setMovementMethod(new ScrollingMovementMethod());
         grade1 = root.findViewById(R.id.grade1);
         grade1.setOnFocusChangeListener(this);
-        EditText weight1 = root.findViewById(R.id.weight1);
+        weight1 = root.findViewById(R.id.weight1);
         weight1.setOnFocusChangeListener(this);
         Button addGrade1 = root.findViewById(R.id.addGrade1);
         addGrade1.setOnClickListener(this);
@@ -59,7 +65,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         gradeTxt2.setMovementMethod(new ScrollingMovementMethod());
         grade2 = root.findViewById(R.id.grade2);
         grade2.setOnFocusChangeListener(this);
-        EditText weight2 = root.findViewById(R.id.weight2);
+        weight2 = root.findViewById(R.id.weight2);
         weight2.setOnFocusChangeListener(this);
         Button addGrade2 = root.findViewById(R.id.addGrade2);
         addGrade2.setOnClickListener(this);
@@ -70,7 +76,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         gradeTxt3.setMovementMethod(new ScrollingMovementMethod());
         grade3 = root.findViewById(R.id.grade3);
         grade3.setOnFocusChangeListener(this);
-        EditText weight3 = root.findViewById(R.id.weight3);
+        weight3 = root.findViewById(R.id.weight3);
         weight3.setOnFocusChangeListener(this);
         Button addGrade3 = root.findViewById(R.id.addGrade3);
         addGrade3.setOnClickListener(this);
@@ -81,7 +87,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         gradeTxt4.setMovementMethod(new ScrollingMovementMethod());
         grade4 = root.findViewById(R.id.grade4);
         grade4.setOnFocusChangeListener(this);
-        EditText weight4 = root.findViewById(R.id.weight4);
+        weight4 = root.findViewById(R.id.weight4);
         weight4.setOnFocusChangeListener(this);
         Button addGrade4 = root.findViewById(R.id.addGrade4);
         addGrade4.setOnClickListener(this);
@@ -92,7 +98,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         gradeTxt5.setMovementMethod(new ScrollingMovementMethod());
         grade5 = root.findViewById(R.id.grade5);
         grade5.setOnFocusChangeListener(this);
-        EditText weight5 = root.findViewById(R.id.weight5);
+        weight5 = root.findViewById(R.id.weight5);
         weight5.setOnFocusChangeListener(this);
         Button addGrade5 = root.findViewById(R.id.addGrade5);
         addGrade5.setOnClickListener(this);
@@ -183,8 +189,50 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         grades1 holds values for weight1, and so on.
         grades1-5 are ArrayLists
          */
+        int grade = 0;
+        double average = 0;
 
-        return 0;
+        if (weight1.getText().length() != 0) {
+            for (int n : grades1)
+                average += n;
+            average /= grades1.size();
+            average /= 100;
+            grade += (Integer.parseInt(String.valueOf(weight1.getText())) * average);
+            average = 0;
+        }
+        if (weight2.getText().length() != 0) {
+            for (int n : grades2)
+                average += n;
+            average /= grades2.size();
+            average /= 100;
+            grade += (Integer.parseInt(String.valueOf(weight2.getText())) * average);
+            average = 0;
+        }
+        if (weight3.getText().length() != 0) {
+            for (int n : grades3)
+                average += n;
+            average /= grades3.size();
+            average /= 100;
+            grade += (Integer.parseInt(String.valueOf(weight3.getText())) * average);
+            average = 0;
+        }
+        if (weight4.getText().length() != 0) {
+            for (int n : grades4)
+                average += n;
+            average /= grades4.size();
+            average /= 100;
+            grade += (Integer.parseInt(String.valueOf(weight4.getText())) * average);
+            average = 0;
+        }
+        if (weight5.getText().length() != 0) {
+            for (int n : grades5)
+                average += n;
+            average /= grades5.size();
+            average /= 100;
+            grade += (Integer.parseInt(String.valueOf(weight5.getText())) * average);
+        }
+
+        return grade;
     }
 
     private void hideKeyboard() {
