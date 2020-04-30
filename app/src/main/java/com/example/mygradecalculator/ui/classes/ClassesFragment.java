@@ -58,7 +58,7 @@ public class ClassesFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         classes_fab = view.findViewById(R.id.classes_fab);
         classes_fab.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +86,7 @@ public class ClassesFragment extends Fragment {
 
         if(classList.size() < 18) {//I arbitrarily chose 18 classes as the max
                                    //since these are supposed to be ongoing academic classes
+            classesInflater.inflate(R.layout.add_class_menu, (ViewGroup) root);
             classList.add(new ClassModel("", 0.0));
             classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
