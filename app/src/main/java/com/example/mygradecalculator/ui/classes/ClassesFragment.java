@@ -21,7 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
-public class ClassesFragment extends Fragment implements View.OnClickListener{
+public class ClassesFragment extends Fragment {
 
     private ClassesViewModel classesViewModel;
     private LayoutInflater classesInflater;
@@ -34,9 +34,6 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
     private TextView textView;
     private ViewGroup classesContainer;
     private View root;
-
-
-
     //TODO: Reimplement saving user information using Android Bundles
     //TODO: Fix TextInput layout to look neater
     //TODO: Look in to using a list view that's less resource intensive
@@ -64,7 +61,12 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         classes_fab = view.findViewById(R.id.classes_fab);
-        classes_fab.setOnClickListener(this);
+        classes_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createNewClassItem();
+            }
+        });
 
         classesRecyclerView = view.findViewById(R.id.recycler_view_classes);
         classesAdapter = new MyClassAdapter(view.getContext(), classList);
@@ -84,8 +86,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
 
         if(classList.size() < 18) {//I arbitrarily chose 18 classes as the max
                                    //since these are supposed to be ongoing academic classes
-            classesInflater.inflate(R.layout.add_class_menu, (ViewGroup) root);
-            classes_fab.setVisibility(FloatingActionButton.GONE);
+            classesInflater.inflate(R.layout.add_class_menu, (ViewGroup)root);
             //classList.add(new ClassModel("", 0.0));
             //classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
@@ -101,17 +102,7 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-
-
     public MyClassAdapter.ViewHolder removeClassItem() {
         return null;
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.classes_fab:
-                createNewClassItem();
-        }
     }
 }
