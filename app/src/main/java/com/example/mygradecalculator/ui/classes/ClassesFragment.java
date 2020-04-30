@@ -5,6 +5,9 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -34,8 +37,8 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
     private TextView textView;
     private ViewGroup classesContainer;
     private View root;
-
-
+    private ScrollView parent;
+    private Button addClass;
 
     //TODO: Reimplement saving user information using Android Bundles
     //TODO: Fix TextInput layout to look neater
@@ -72,7 +75,6 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
         classesRecyclerView.setLayoutManager(classesLayoutManager);
         classesRecyclerView.setAdapter(classesAdapter);
         //createMultipleClassItems(25);
-
     }
 
     //TODO: Set a limit to the number of classes the user can make
@@ -86,6 +88,9 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
                                    //since these are supposed to be ongoing academic classes
             classesInflater.inflate(R.layout.add_class_menu, (ViewGroup) root);
             classes_fab.setVisibility(FloatingActionButton.GONE);
+            addClass = root.findViewById(R.id.addClass);
+            addClass.setOnClickListener(this);
+            parent = root.findViewById(R.id.add_class_parent);
             //classList.add(new ClassModel("", 0.0));
             //classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
@@ -112,6 +117,14 @@ public class ClassesFragment extends Fragment implements View.OnClickListener{
         switch(v.getId()) {
             case R.id.classes_fab:
                 createNewClassItem();
+                break;
+            case R.id.addClass:
+                parent.setVisibility(ScrollView.GONE);
+                classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
+                classes_fab.setVisibility(FloatingActionButton.GONE);
+                classList.add(new ClassModel("", 0.0));
+                classesAdapter.notifyDataSetChanged();
+                break;
         }
     }
 }

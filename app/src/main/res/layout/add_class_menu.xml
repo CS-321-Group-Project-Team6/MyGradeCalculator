@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/add_class_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +19,6 @@
         android:visibility="visible">
 
         <EditText
-            android:id="@+id/class_name_input_box"
             android:layout_width="350dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
@@ -30,7 +30,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/weight1"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_marginStart="72dp"
@@ -45,7 +44,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/grade1"
             android:layout_width="98dp"
             android:layout_height="43dp"
             android:layout_marginStart="75dp"
@@ -58,7 +56,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/addGrade1"
             android:layout_width="64dp"
             android:layout_height="44dp"
             android:layout_marginTop="108dp"
@@ -69,7 +66,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/clearGrade1"
             android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_marginTop="108dp"
@@ -80,7 +76,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gradeTxt1"
             android:layout_width="194dp"
             android:layout_height="65dp"
             android:layout_marginStart="75dp"
@@ -92,7 +87,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/weight2"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_marginStart="75dp"
@@ -120,7 +114,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/addGrade2"
             android:layout_width="64dp"
             android:layout_height="44dp"
             android:layout_marginTop="327dp"
@@ -131,7 +124,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/clearGrade2"
             android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_marginTop="327dp"
@@ -142,7 +134,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gradeTxt2"
             android:layout_width="194dp"
             android:layout_height="65dp"
             android:layout_marginStart="75dp"
@@ -154,7 +145,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/weight3"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_marginStart="75dp"
@@ -169,7 +159,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/grade3"
             android:layout_width="98dp"
             android:layout_height="43dp"
             android:layout_marginStart="75dp"
@@ -182,7 +171,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/addGrade3"
             android:layout_width="64dp"
             android:layout_height="44dp"
             android:layout_marginTop="546dp"
@@ -193,7 +181,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/clearGrade3"
             android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_marginTop="546dp"
@@ -204,7 +191,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gradeTxt3"
             android:layout_width="194dp"
             android:layout_height="65dp"
             android:layout_marginStart="75dp"
@@ -216,7 +202,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/weight4"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_marginStart="75dp"
@@ -231,7 +216,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/grade4"
             android:layout_width="98dp"
             android:layout_height="43dp"
             android:layout_marginStart="75dp"
@@ -244,7 +228,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/addGrade4"
             android:layout_width="64dp"
             android:layout_height="44dp"
             android:layout_marginTop="765dp"
@@ -255,7 +238,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/clearGrade4"
             android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_marginTop="765dp"
@@ -266,7 +248,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gradeTxt4"
             android:layout_width="194dp"
             android:layout_height="65dp"
             android:layout_marginStart="75dp"
@@ -278,7 +259,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/weight5"
             android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_marginStart="75dp"
@@ -293,7 +273,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/grade5"
             android:layout_width="98dp"
             android:layout_height="43dp"
             android:layout_marginStart="75dp"
@@ -317,7 +296,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/clearGrade5"
             android:layout_width="71dp"
             android:layout_height="42dp"
             android:layout_marginTop="984dp"
@@ -328,7 +306,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gradeTxt5"
             android:layout_width="194dp"
             android:layout_height="65dp"
             android:layout_marginStart="75dp"
@@ -340,7 +317,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/calculateGrade"
+            android:id="@+id/addClass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Class"
