@@ -2,7 +2,6 @@ package com.example.mygradecalculator.ui.classes;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.LayoutInflater;
@@ -10,10 +9,12 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -69,7 +70,8 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
     private EditText className;
     private double classGrade;
 
-    private ScrollView parent;
+    private ScrollView addClassLayout;
+    private RecyclerView recyclerView;
     private Button addClass;
 
     //TODO: Reimplement saving user information using Android Bundles
@@ -106,6 +108,8 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
         classesLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         classesRecyclerView.setLayoutManager(classesLayoutManager);
         classesRecyclerView.setAdapter(classesAdapter);
+
+        recyclerView = root.findViewById(R.id.recycler_view_classes);
         //createMultipleClassItems(25);
     }
 
@@ -119,8 +123,9 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
         if(classList.size() < 18) {//I arbitrarily chose 18 classes as the max
                                    //since these are supposed to be ongoing academic classes
             classesInflater.inflate(R.layout.add_class_menu, (ViewGroup) root);
-            classes_fab.setVisibility(FloatingActionButton.GONE);
             initAddClass();
+            classes_fab.setVisibility(FloatingActionButton.GONE);
+            recyclerView.setVisibility(RecyclerView.GONE);
             //classList.add(new ClassModel(className.getText().toString(), classGrade));
             //classesAdapter.notifyDataSetChanged(); //This function is necessary to call after any changes to the list
         }                                          //are made. Otherwise changes wont show up in the emulator view window
@@ -204,17 +209,21 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
                 break;
 
             case R.id.addClass:
+
                 classGrade = calculate();
-                parent.setVisibility(ScrollView.GONE);
-                classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
-                classes_fab.setVisibility(FloatingActionButton.GONE);
                 classList.add(new ClassModel(className.getText().toString(), classGrade));
+                classesInflater.inflate(R.layout.fragment_classes, (ViewGroup) root);
+                addClassLayout.setVisibility(ScrollView.GONE);
+                classes_fab.setVisibility(FloatingActionButton.VISIBLE);
+                recyclerView.setVisibility(RecyclerView.VISIBLE);
+
                 classesAdapter.notifyDataSetChanged();
                 break;
         }
     }
 
     public void initAddClass() {
+        addClassLayout = root.findViewById(R.id.add_class_parent);
         className = root.findViewById(R.id.addClassName);
         className.setOnFocusChangeListener((View.OnFocusChangeListener) this);
 
@@ -275,7 +284,6 @@ public class ClassesFragment extends Fragment implements View.OnClickListener, V
 
         addClass = root.findViewById(R.id.addClass);
         addClass.setOnClickListener(this);
-        parent = root.findViewById(R.id.add_class_parent);
     }
 
     private int calculate() {
